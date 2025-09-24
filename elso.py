@@ -15,8 +15,7 @@ print(szamok)
 
 
 #kitalalandó szám beállítása
-#kitalalando_szam = szamok[random.randint(0, len(szamok))]
-kitalalando_szam = 12
+kitalalando_szam = szamok[random.randint(0, len(szamok))]
 
 
 tipp = input("Kérek egy egész számot [1-100]: ")
