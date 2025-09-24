@@ -15,25 +15,43 @@ print(szamok)
 
 
 #kitalalandó szám beállítása
-kitalalando_szam = szamok[random.randint(0, len(szamok))]
+#kitalalando_szam = szamok[random.randint(0, len(szamok))]
+kitalalando_szam = 12
 
-tipp = int(input("Kérek egy egész számot [1-100]: "))
 
-if(tipp == kitalalando_szam):
-    print("Gratulálok, eltaláltad a számot!")
-elif(tipp < kitalalando_szam):
+tipp = input("Kérek egy egész számot [1-100]: ")
+
+while(not tipp.isdecimal()):
+    print("Egész számmal játsz!")
+    tipp = input("Kérek egy egész számot [1-100]: ")
+
+tipp = int(tipp)
+
+if(tipp < kitalalando_szam):
     print("A kitalálandó szám nagyobb!")
-else:
+elif(tipp > kitalalando_szam):
     print("A kitalálandó szám kisebb!")
 
 while(tipp != kitalalando_szam):
-    tipp = int(input("Kérek egy egész számot [1-100]: "))
+    tipp = input("Kérek egy egész számot [1-100]: ")
     
-    if(tipp == kitalalando_szam):
-        print("Gratulálok, eltaláltad a számot!")
-    elif(tipp < kitalalando_szam):
+    while(not tipp.isdecimal()):
+        print("Egész számmal játsz!")
+        tipp = input("Kérek egy egész számot [1-100]: ")
+
+    tipp = int(tipp)
+    
+    if(tipp < kitalalando_szam):
         print("A kitalálandó szám nagyobb!")
-    else:
+    elif(tipp > kitalalando_szam):
         print("A kitalálandó szám kisebb!")
+
+
+print("Gratulálok, eltaláltad a számot!")
+
+
+
+
+
 
 
