@@ -17,7 +17,7 @@ except FileNotFoundError:
        [X] Eldöntés 2
     3. [X] Kiválasztás
     4. [X] Keresés
-    5. [] Sorozatszámítás, összegzés
+    5. [x] Sorozatszámítás, összegzés
     6. [] Minimum/maximum kiválasztás
     
     7. [] Másolás
@@ -83,9 +83,18 @@ else:
 
 
 
-
-
-
+#számolja ki a versenyzők pontszámainak átlagát
+S=0
+for i in range(1, len(verseny_adatok)):
+    S+=int(verseny_adatok[i].split(',')[1])
+print(f"a versenyzők pontszámainak átlaga: {S/len(verseny_adatok)-1}")
+    
+maxi=1
+max=verseny_adatok[i].split(",")[1]
+for i in range(3,len(verseny_adatok)):
+    if verseny_adatok[i]>verseny_adatok[maxi]:
+        maxi=i
+        max=verseny_adatok[i]
 
 
 
