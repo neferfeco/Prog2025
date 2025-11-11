@@ -126,22 +126,29 @@ for i in range(2,len(verseny_adatok)):
         masik_lista.append(verseny_adatok[i].split(",")[0])
 print("Ezek a személyek vannak a Mclaren istálloban:",masik_lista)
 
-
-
-
-
-
-
+# ---------------------------------------------------------
 
 #9. SZÉTVÁLOGATÁS
-# 
+# kinek van kinek nincs pontja?
+dby=0
+dbx=0
+y=[]
+x=[]
+for i in range(1, len(verseny_adatok)):
+    if(int(verseny_adatok[i].split(",")[1])>0):
+        dby=dby+1
+        y.append(verseny_adatok[i].split(",")[0])
+    else:
+        dbx=dbx+1
+        x.append(verseny_adatok[i].split(",")[0])
+print(f"Van pontja:{y}\n\nnincs pontja: {x}")
+        
 
 
 
 
 
-
-
+# ---------------------------------------------------------
 
 #7. MÁSOLÁS
 #
@@ -151,6 +158,8 @@ print("Ezek a személyek vannak a Mclaren istálloban:",masik_lista)
 
 
 
+
+# ---------------------------------------------------------
 
 #12. RENDEZÉS: minimmumkiválasztásos
 
