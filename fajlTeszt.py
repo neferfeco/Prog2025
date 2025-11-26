@@ -163,8 +163,22 @@ print(f"Van pontja:{y}\n\nnincs pontja: {x}")
 
 #12. RENDEZÉS: minimmumkiválasztásos
 
+#Versenyzők pontszáma alapján növekvő sorrendbe:
+for i in range(1, len(verseny_adatok)-1):
+    min=i
+    minertek=int(verseny_adatok[i].split(',')[1])
+    for j in range(i+1, len(verseny_adatok)):
+        if(int(verseny_adatok[j].split(',')[1])<int(verseny_adatok[min].split(',')[1])):
+            min=j
+            minertek=int(verseny_adatok[j].split(',')[1])
+    
+    s=verseny_adatok[i]
+    verseny_adatok[i]=verseny_adatok[min]
+    verseny_adatok[min]=s
 
 
+for i in verseny_adatok:
+    print(i)
 
 
 
