@@ -1,38 +1,4 @@
-# FÁJL BEOLVASÁS ELJÁRÁSSAL
-
-verseny_adatok = []
-
-inputfajl = "F1-2024dec.csv"
-
-
-def adat_beolvasas(fajlnev):
-    try:
-        with open(fajlnev, encoding="utf-8") as fajl:
-            global verseny_adatok
-            verseny_adatok = fajl.readlines()
-
-    except Exception as ex:
-        print(f"Halihóóóóó!: Hiba oka: {ex}")
-    except FileNotFoundError:
-        print("Hiba a fájl megnyitása közben!")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    """
+"""
     1. [X] Megszámolás
     2. [X] Eldöntés 1
        [X] Eldöntés 2
@@ -54,6 +20,27 @@ def adat_beolvasas(fajlnev):
     """
 
 
+
+# FÁJL BEOLVASÁS ELJÁRÁSSAL
+
+verseny_adatok = []
+
+inputfajl = "ELSO\\F1-2024dec.csv"
+
+
+def adat_beolvasas(fajlnev):
+    try:
+        with open(fajlnev, encoding="utf-8") as fajl:
+            global verseny_adatok
+            verseny_adatok = fajl.readlines()
+
+    except Exception as ex:
+        print(f"Halihóóóóó!: Hiba oka: {ex}")
+    except FileNotFoundError:
+        print("Hiba a fájl megnyitása közben!")
+
+
+
 # ELJÁRÁS
 def pontatlanok():
    # 1. Hány versenyző nem szerzett még pontot?
@@ -66,7 +53,7 @@ def pontatlanok():
     print(f"{db} versenyző nem szerzett még pontot.\n")
 
 
-#FÜGGVÉNY
+# FÜGGVÉNY
 def versenyzo_kereso(nev):
     # 2.A Van-e Fernando nevű versenyző?
     i = 0
@@ -170,20 +157,10 @@ for i in range(1, len(verseny_adatok)):
 print(f"Van pontja:{y}\n\nnincs pontja: {x}")
         
 
-
-
-
-
 # ---------------------------------------------------------
 
 #7. MÁSOLÁS
 #
-
-
-
-
-
-
 
 # ---------------------------------------------------------
 
@@ -215,9 +192,10 @@ for i in verseny_adatok:
 
 adat_beolvasas(inputfajl)
 
+# 1.F eljárás hívás
 pontatlanok()
 
-
+# 2.F függvény hívás
 van_e = versenyzo_kereso("Fernando")
 
 if van_e:
