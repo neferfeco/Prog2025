@@ -42,8 +42,25 @@ tanulo_adatok = []
     A tanulók adatait egy "2D"-s listában  (lista a listában: tanulo_adatok) tárolja el.
     A metódus neve: fajl_beolvasas
 """
-
-
+def fajl_beolvasas(inputfajl):
+    try:
+        with open(inputfajl, encoding="utf-8") as fajl:
+            global ossz_pontszam
+            ossz_pontszam = int(fajl.readline().strip().split(" ")[2])
+            
+            fajl.readline()
+            
+            for sor in fajl:
+                sornyi_adat = sor.strip().split(";")
+                
+                sornyi_adat[1] = int(sornyi_adat[1])
+                sornyi_adat[2] = int(sornyi_adat[2])
+                sornyi_adat[3] = int(sornyi_adat[3])                
+                
+                tanulo_adatok.append(sornyi_adat)
+                
+    except IOError as ex:
+        print(f"Fájl művelet hiba: {ex}")            
 
 
 
@@ -87,6 +104,11 @@ print(f"\n{'*' * 40}\n{cim.upper():^40}\n{'*' * 40}\n\n")
 
 
 # fajl_beolvasas
+inputfajl = "MASODIK/12B_dhcp_ponttabla.txt"
+fajl_beolvasas(inputfajl)
+
+print(tanulo_adatok)
+
 
 # csoport_letszam
 
