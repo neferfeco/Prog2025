@@ -69,8 +69,8 @@ def fajl_beolvasas(inputfajl):
     Határozza meg hány tanulóból áll a csoport!
     A metódus neve: csoport_letszam
 """
-
-
+def csoport_letszam():
+    return len(tanulo_adatok)
 
 
 
@@ -79,9 +79,14 @@ def fajl_beolvasas(inputfajl):
     Határozza meg melyik tanuló gyűjtötte a legtöbb pontszámot!
     A metódus neve: legszorgalmasabb
 """
+def legszorgalmasabb():
+    maxi = 0
 
-
-
+    for i in range(1, len(tanulo_adatok)):
+        if tanulo_adatok[i][3] > tanulo_adatok[maxi][3]:
+            maxi = i
+    
+    return tanulo_adatok[maxi][0]
 
 
 """
@@ -91,9 +96,9 @@ def fajl_beolvasas(inputfajl):
     Kiírásnál jelenítse meg a tanulók nevét és az új pontszámokat.
     A metódus neve: miki_ajandek
 """
-
-
-
+def miki_ajandek():
+    for i in range(len(tanulo_adatok)):
+        tanulo_adatok[i][3] = round(tanulo_adatok[i][3] * 1.05)
 
 
 # *************************************
@@ -109,12 +114,16 @@ fajl_beolvasas(inputfajl)
 
 print(tanulo_adatok)
 
+print(f"A csoport létszáma: {csoport_letszam()}")
 
-# csoport_letszam
+print(f"A legtöbb pontot szerző tanuló: {legszorgalmasabb()}")
 
-# legszorgalmasabb
 
-# miki_ajandek
+print("Az ÚJ pontszámok:")
+miki_ajandek()
+
+for i in range(len(tanulo_adatok)):
+    print(f"{tanulo_adatok[i][0]:20}\t{tanulo_adatok[i][3]}")
 
 
 
