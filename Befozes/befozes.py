@@ -55,8 +55,9 @@ if meret > mennyiseg:
     i = 0
     while mennyiseg > 0:
         mennyiseg -= uvegek[i]
+        i += 1
     
-    print(f"Megmaradt üvegek száma: {len(uvegek) - (i + 1)}")
+    print(f"Megmaradt üvegek száma: {len(uvegek) - i}")
     
     
 else:
